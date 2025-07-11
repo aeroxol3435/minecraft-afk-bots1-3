@@ -24,7 +24,7 @@ function createBot(index) {
     setInterval(() => {
       if (!bot.entity || !bot.entity.position) return;
 
-      bot.chat("i wanna run away");
+      // Removed: bot.chat("i wanna run away");
       bot.setControlState('forward', true);
 
       setTimeout(() => {
@@ -64,4 +64,3 @@ app.get('/ping', (req, res) => {
 app.listen(port, () => {
   console.log(`🌐 Web server running at http://localhost:${port}`);
 });
- 
