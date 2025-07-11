@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const usernames = ['pagol', 'manoshik', 'mata_nosto']; // bot names
+const usernames = ['pagol', 'manoshik', 'mata_nosto'];
 const botCount = usernames.length;
 const bots = [];
 
@@ -32,7 +32,7 @@ function createBot(index) {
         movingForward = !movingForward;
         bot.look(bot.entity.yaw + Math.PI, 0, true);
       }, 2000);
-    }, 60000); // every 60 seconds
+    }, 60000);
   });
 
   bot.on('end', () => {
@@ -57,6 +57,11 @@ app.get('/', (req, res) => {
   res.send(`🟢 Bots online: ${bots.map(bot => bot.username).join(', ')}`);
 });
 
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
 app.listen(port, () => {
   console.log(`🌐 Web server running at http://localhost:${port}`);
 });
+ 
