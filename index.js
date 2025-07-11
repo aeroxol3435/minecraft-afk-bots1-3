@@ -24,7 +24,7 @@ function createBot(index) {
     setInterval(() => {
       if (!bot.entity || !bot.entity.position) return;
 
-      // Removed: bot.chat("i wanna run away");
+      bot.chat("i wanna run away");
       bot.setControlState('forward', true);
 
       setTimeout(() => {
